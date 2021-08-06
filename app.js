@@ -23,4 +23,6 @@ app.post('/upload', uploadRouter)
 // app.get('/admin',adminRouter);
 // app.post('/checkin',checkinRouter);
 
-app.listen(3000);
+app.listen(3005, () => { 
+    console.log('Listening on port 3005');
+});

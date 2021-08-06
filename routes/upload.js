@@ -36,11 +36,13 @@ uploadRouter.post('/upload', (req, res) => {
     file.mv(upload_path + filename, (err) => {
         if (err) {
             console.log(err);
+            return res.end("Error uploading file.");
         } else {
             console.log("File uploaded successfully");
+            res.status(200).send(filename + " uploaded successfully");
         }
     });
-    res.end();
+    
 });
 
 module.exports = uploadRouter;
